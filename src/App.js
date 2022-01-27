@@ -2,6 +2,8 @@ import react, { useState } from "react";
 import reactDom from "react-dom";
 import "./index.css";
 
+import AddCircleIcon from "@mui/icons-material/AddCircle";
+
 function App() {
   //const [list, setlist] = useState(["banana", "mango", "apple"]);
 
@@ -32,16 +34,13 @@ function App() {
             value={item}
             onChange={itemEvent}
           />
-          <button onClick={Additem}>+</button>
+          <button onClick={Additem}>
+            <AddCircleIcon />
+          </button>
 
           <ol>
             {list.map((items) => {
-              return (
-                <div className="todo_style">
-                  <span className="fa-times"> X </span>
-                  <li>{items}</li>
-                </div>
-              );
+              return <li>{items}</li>;
             })}
           </ol>
         </div>

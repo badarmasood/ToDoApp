@@ -54,8 +54,6 @@ button {
   min-width: 40px;
   width: 40px;
   border-radius: 20%;
-  background-color: #8566aa;
-  color: white;
 
   font-size: 40px;
   border: none;
@@ -100,5 +98,5 @@ ol li {
   color: aliceblue;
 }
 .todo_style .fa-times:hover {
-  color: rgb(255, 0, 0);
+  color: rgb(255, 25, 25);
 }
