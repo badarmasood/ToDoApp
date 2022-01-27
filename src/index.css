@@ -80,3 +80,25 @@ ol li {
   color: #8566aa;
   text-transform: capitalize;
 }
+.todo_style {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
+
+.todo_style .fa-times {
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #8566aa;
+  border-radius: 20%;
+  padding: 1px;
+  margin-right: 20px;
+
+  color: aliceblue;
+}
+.todo_style .fa-times:hover {
+  color: rgb(255, 0, 0);
+}
