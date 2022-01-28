@@ -5,6 +5,7 @@ import "./index.css";
 import Button from "@mui/material/Button";
 import AddCircleRoundedIcon from "@mui/icons-material/AddCircleRounded";
 import DeleteIcon from "@mui/icons-material/Delete";
+import LabelImportantIcon from "@mui/icons-material/LabelImportant";
 
 function App() {
   //const [list, setlist] = useState(["banana", "mango", "apple"]);
@@ -12,6 +13,8 @@ function App() {
   const [list, setlist] = useState([]);
 
   const [item, setitem] = useState("");
+
+  const [line, setline] = useState(false);
 
   const Additem = () => {
     setlist((olditems) => {
@@ -21,6 +24,12 @@ function App() {
   };
   const itemEvent = (e) => {
     setitem(e.target.value);
+  };
+  const cutit = () => {
+    setline(true);
+    setTimeout(() => {
+      setlist([]);
+    }, 2000);
   };
 
   return (
@@ -50,14 +59,25 @@ function App() {
             {list.map((items, index) => {
               return (
                 <div className="todo_style">
-                  <span>
-                    <DeleteIcon className="listIcon" fontSize="small" />
+                  <span style={{ marginRight: 10 }}>
+                    <LabelImportantIcon fontSize="small" />
                   </span>
-                  <li>{items}</li>
+                  <li
+                    style={{ textDecoration: line ? "line-through" : "none" }}
+                  >
+                    {items}
+                  </li>
                 </div>
               );
             })}
           </ol>
+        </div>
+        <div className="dltall">
+          <Button>
+            <span onClick={cutit}>
+              <DeleteIcon className="listIcon" fontSize="small" />
+            </span>
+          </Button>
         </div>
       </div>
     </>
