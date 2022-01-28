@@ -2,7 +2,8 @@ import react, { useState } from "react";
 import reactDom from "react-dom";
 import "./index.css";
 
-import AddCircleIcon from "@mui/icons-material/AddCircle";
+import Button from "@mui/material/Button";
+import AddCircleRoundedIcon from "@mui/icons-material/AddCircleRounded";
 
 function App() {
   //const [list, setlist] = useState(["banana", "mango", "apple"]);
@@ -34,9 +35,15 @@ function App() {
             value={item}
             onChange={itemEvent}
           />
-          <button onClick={Additem}>
-            <AddCircleIcon />
-          </button>
+          <Button className="newbtn" onClick={Additem}>
+            <AddCircleRoundedIcon fontSize="large" />
+          </Button>
+
+          {/* <button onClick={Additem}>+</button> */}
+
+          {/* <ol>
+            <li>My items</li>
+          </ol> */}
 
           <ol>
             {list.map((items) => {
