@@ -4,6 +4,7 @@ import "./index.css";
 
 import Button from "@mui/material/Button";
 import AddCircleRoundedIcon from "@mui/icons-material/AddCircleRounded";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 function App() {
   //const [list, setlist] = useState(["banana", "mango", "apple"]);
@@ -46,8 +47,15 @@ function App() {
           </ol> */}
 
           <ol>
-            {list.map((items) => {
-              return <li>{items}</li>;
+            {list.map((items, index) => {
+              return (
+                <div className="todo_style">
+                  <span>
+                    <DeleteIcon className="listIcon" fontSize="small" />
+                  </span>
+                  <li>{items}</li>
+                </div>
+              );
             })}
           </ol>
         </div>
